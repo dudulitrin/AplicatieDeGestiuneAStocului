@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataFacturi" targetNamespace="http://tempuri.org/DataFacturi.xsd" xmlns:mstns="http://tempuri.org/DataFacturi.xsd" xmlns="http://tempuri.org/DataFacturi.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GestiuneConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GestiuneConnectionString1 (Settings)" PropertyReference="ApplicationSettings.Aplicatie_de_gestiune.Properties.Settings.GlobalReference.Default.GestiuneConnectionString1" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FacturiTableAdapter" GeneratorDataComponentClassName="FacturiTableAdapter" Name="Facturi" UserDataComponentName="FacturiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GestiuneConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Facturi.IdF, Facturi.NrF, Facturi.DataF, SUM(FacturiContinut.PretIntrare * FacturiContinut.Cantitate) AS Total, Furnizori.DFurnizor, Facturi.IdFurnizor
+FROM            ((Facturi INNER JOIN
+                         Furnizori ON Facturi.IdFurnizor = Furnizori.IdFurnizor) INNER JOIN
+                         FacturiContinut ON Facturi.NrF = FacturiContinut.NrF)
+GROUP BY Facturi.IdF, Facturi.NrF, Facturi.DataF, Furnizori.DFurnizor, Facturi.IdFurnizor</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdF" DataSetColumn="IdF" />
+              <Mapping SourceColumn="NrF" DataSetColumn="NrF" />
+              <Mapping SourceColumn="DataF" DataSetColumn="DataF" />
+              <Mapping SourceColumn="DFurnizor" DataSetColumn="DFurnizor" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+              <Mapping SourceColumn="IdFurnizor" DataSetColumn="IdFurnizor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FacturiContinutTableAdapter" GeneratorDataComponentClassName="FacturiContinutTableAdapter" Name="FacturiContinut" UserDataComponentName="FacturiContinutTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GestiuneConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        FacturiContinut.Nrc, Produse.DProdus, FacturiContinut.Cantitate, FacturiContinut.PretIntrare * FacturiContinut.Cantitate AS Valoare, Produse.UM, FacturiContinut.NrF, FacturiContinut.PretIntrare, Produse.IdProdus
+FROM            (FacturiContinut INNER JOIN
+                         Produse ON FacturiContinut.IdProdus = Produse.IdProdus)
+ORDER BY FacturiContinut.Nrc</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nrc" DataSetColumn="Nrc" />
+              <Mapping SourceColumn="DProdus" DataSetColumn="DProdus" />
+              <Mapping SourceColumn="Cantitate" DataSetColumn="Cantitate" />
+              <Mapping SourceColumn="Valoare" DataSetColumn="Valoare" />
+              <Mapping SourceColumn="UM" DataSetColumn="UM" />
+              <Mapping SourceColumn="PretIntrare" DataSetColumn="PretIntrare" />
+              <Mapping SourceColumn="IdProdus" DataSetColumn="IdProdus" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataFacturi" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataFacturi" msprop:Generator_UserDSName="DataFacturi">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Facturi" msprop:Generator_TableClassName="FacturiDataTable" msprop:Generator_TableVarName="tableFacturi" msprop:Generator_TablePropName="Facturi" msprop:Generator_RowDeletingName="FacturiRowDeleting" msprop:Generator_RowChangingName="FacturiRowChanging" msprop:Generator_RowEvHandlerName="FacturiRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturiRowDeleted" msprop:Generator_UserTableName="Facturi" msprop:Generator_RowChangedName="FacturiRowChanged" msprop:Generator_RowEvArgName="FacturiRowChangeEvent" msprop:Generator_RowClassName="FacturiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdF" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdF" msprop:Generator_ColumnPropNameInRow="IdF" msprop:Generator_ColumnPropNameInTable="IdFColumn" msprop:Generator_UserColumnName="IdF" type="xs:int" minOccurs="0" />
+              <xs:element name="NrF" msprop:Generator_ColumnVarNameInTable="columnNrF" msprop:Generator_ColumnPropNameInRow="NrF" msprop:Generator_ColumnPropNameInTable="NrFColumn" msprop:Generator_UserColumnName="NrF" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataF" msprop:Generator_ColumnVarNameInTable="columnDataF" msprop:Generator_ColumnPropNameInRow="DataF" msprop:Generator_ColumnPropNameInTable="DataFColumn" msprop:Generator_UserColumnName="DataF" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DFurnizor" msprop:Generator_ColumnVarNameInTable="columnDFurnizor" msprop:Generator_ColumnPropNameInRow="DFurnizor" msprop:Generator_ColumnPropNameInTable="DFurnizorColumn" msprop:Generator_UserColumnName="DFurnizor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IdFurnizor" msprop:Generator_ColumnVarNameInTable="columnIdFurnizor" msprop:Generator_ColumnPropNameInRow="IdFurnizor" msprop:Generator_ColumnPropNameInTable="IdFurnizorColumn" msprop:Generator_UserColumnName="IdFurnizor" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="FacturiContinut" msprop:Generator_TableClassName="FacturiContinutDataTable" msprop:Generator_TableVarName="tableFacturiContinut" msprop:Generator_TablePropName="FacturiContinut" msprop:Generator_RowDeletingName="FacturiContinutRowDeleting" msprop:Generator_RowChangingName="FacturiContinutRowChanging" msprop:Generator_RowEvHandlerName="FacturiContinutRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturiContinutRowDeleted" msprop:Generator_UserTableName="FacturiContinut" msprop:Generator_RowChangedName="FacturiContinutRowChanged" msprop:Generator_RowEvArgName="FacturiContinutRowChangeEvent" msprop:Generator_RowClassName="FacturiContinutRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nrc" msprop:Generator_ColumnVarNameInTable="columnNrc" msprop:Generator_ColumnPropNameInRow="Nrc" msprop:Generator_ColumnPropNameInTable="NrcColumn" msprop:Generator_UserColumnName="Nrc" type="xs:int" minOccurs="0" />
+              <xs:element name="DProdus" msprop:Generator_ColumnVarNameInTable="columnDProdus" msprop:Generator_ColumnPropNameInRow="DProdus" msprop:Generator_ColumnPropNameInTable="DProdusColumn" msprop:Generator_UserColumnName="DProdus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantitate" msprop:Generator_ColumnVarNameInTable="columnCantitate" msprop:Generator_ColumnPropNameInRow="Cantitate" msprop:Generator_ColumnPropNameInTable="CantitateColumn" msprop:Generator_UserColumnName="Cantitate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Valoare" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValoare" msprop:Generator_ColumnPropNameInRow="Valoare" msprop:Generator_ColumnPropNameInTable="ValoareColumn" msprop:Generator_UserColumnName="Valoare" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UM" msprop:Generator_ColumnVarNameInTable="columnUM" msprop:Generator_ColumnPropNameInRow="UM" msprop:Generator_ColumnPropNameInTable="UMColumn" msprop:Generator_UserColumnName="UM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NrF" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnNrF" msprop:Generator_ColumnPropNameInRow="NrF" msprop:Generator_ColumnPropNameInTable="NrFColumn" msprop:Generator_UserColumnName="NrF" type="xs:string" minOccurs="0" />
+              <xs:element name="PretIntrare" msprop:Generator_ColumnVarNameInTable="columnPretIntrare" msprop:Generator_ColumnPropNameInRow="PretIntrare" msprop:Generator_ColumnPropNameInTable="PretIntrareColumn" msprop:Generator_UserColumnName="PretIntrare" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IdProdus" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProdus" msprop:Generator_ColumnPropNameInRow="IdProdus" msprop:Generator_ColumnPropNameInTable="IdProdusColumn" msprop:Generator_UserColumnName="IdProdus" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

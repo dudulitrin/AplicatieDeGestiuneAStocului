@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataComenzi" targetNamespace="http://tempuri.org/DataComenzi.xsd" xmlns:mstns="http://tempuri.org/DataComenzi.xsd" xmlns="http://tempuri.org/DataComenzi.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GestiuneConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GestiuneConnectionString1 (Settings)" PropertyReference="ApplicationSettings.Aplicatie_de_gestiune.Properties.Settings.GlobalReference.Default.GestiuneConnectionString1" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ComenziTableAdapter" GeneratorDataComponentClassName="ComenziTableAdapter" Name="Comenzi" UserDataComponentName="ComenziTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GestiuneConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Comenzi.IdComanda, Comenzi.NrComanda, Comenzi.DataComanda, Comenzi.IdVanzator, Utilizatori.Nume, SUM(ComenziContinut.PretVanzare * ComenziContinut.Cantitate) AS Total
+FROM            ((Comenzi LEFT OUTER JOIN
+                         Utilizatori ON Comenzi.IdVanzator = Utilizatori.IdUtilizator) LEFT OUTER JOIN
+                         ComenziContinut ON Comenzi.IdComanda = ComenziContinut.IdComanda)
+GROUP BY Comenzi.IdComanda, Comenzi.NrComanda, Comenzi.DataComanda, Comenzi.IdVanzator, Utilizatori.Nume</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdComanda" DataSetColumn="IdComanda" />
+              <Mapping SourceColumn="NrComanda" DataSetColumn="NrComanda" />
+              <Mapping SourceColumn="DataComanda" DataSetColumn="DataComanda" />
+              <Mapping SourceColumn="IdVanzator" DataSetColumn="IdVanzator" />
+              <Mapping SourceColumn="Nume" DataSetColumn="Nume" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ComenziContinutTableAdapter" GeneratorDataComponentClassName="ComenziContinutTableAdapter" Name="ComenziContinut" UserDataComponentName="ComenziContinutTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GestiuneConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ComenziContinut.IdComanda, ComenziContinut.NrCrt, ComenziContinut.IdProdus, ProduseFurnizate.DProdus, ProduseFurnizate.UM, ComenziContinut.PretVanzare, ComenziContinut.Cantitate, 
+                         ComenziContinut.PretVanzare * ComenziContinut.Cantitate AS Valoare
+FROM            (ComenziContinut LEFT OUTER JOIN
+                         ProduseFurnizate ON ComenziContinut.IdProdus = ProduseFurnizate.IdProdus)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdComanda" DataSetColumn="IdComanda" />
+              <Mapping SourceColumn="NrCrt" DataSetColumn="NrCrt" />
+              <Mapping SourceColumn="IdProdus" DataSetColumn="IdProdus" />
+              <Mapping SourceColumn="DProdus" DataSetColumn="DProdus" />
+              <Mapping SourceColumn="UM" DataSetColumn="UM" />
+              <Mapping SourceColumn="PretVanzare" DataSetColumn="PretVanzare" />
+              <Mapping SourceColumn="Cantitate" DataSetColumn="Cantitate" />
+              <Mapping SourceColumn="Valoare" DataSetColumn="Valoare" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataComenzi" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataComenzi" msprop:Generator_UserDSName="DataComenzi">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Comenzi" msprop:Generator_TableClassName="ComenziDataTable" msprop:Generator_TableVarName="tableComenzi" msprop:Generator_TablePropName="Comenzi" msprop:Generator_RowDeletingName="ComenziRowDeleting" msprop:Generator_RowChangingName="ComenziRowChanging" msprop:Generator_RowEvHandlerName="ComenziRowChangeEventHandler" msprop:Generator_RowDeletedName="ComenziRowDeleted" msprop:Generator_UserTableName="Comenzi" msprop:Generator_RowChangedName="ComenziRowChanged" msprop:Generator_RowEvArgName="ComenziRowChangeEvent" msprop:Generator_RowClassName="ComenziRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdComanda" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdComanda" msprop:Generator_ColumnPropNameInRow="IdComanda" msprop:Generator_ColumnPropNameInTable="IdComandaColumn" msprop:Generator_UserColumnName="IdComanda" type="xs:int" minOccurs="0" />
+              <xs:element name="NrComanda" msprop:Generator_ColumnVarNameInTable="columnNrComanda" msprop:Generator_ColumnPropNameInRow="NrComanda" msprop:Generator_ColumnPropNameInTable="NrComandaColumn" msprop:Generator_UserColumnName="NrComanda" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataComanda" msprop:Generator_ColumnVarNameInTable="columnDataComanda" msprop:Generator_ColumnPropNameInRow="DataComanda" msprop:Generator_ColumnPropNameInTable="DataComandaColumn" msprop:Generator_UserColumnName="DataComanda" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IdVanzator" msprop:Generator_ColumnVarNameInTable="columnIdVanzator" msprop:Generator_ColumnPropNameInRow="IdVanzator" msprop:Generator_ColumnPropNameInTable="IdVanzatorColumn" msprop:Generator_UserColumnName="IdVanzator" type="xs:int" minOccurs="0" />
+              <xs:element name="Nume" msprop:Generator_ColumnVarNameInTable="columnNume" msprop:Generator_ColumnPropNameInRow="Nume" msprop:Generator_ColumnPropNameInTable="NumeColumn" msprop:Generator_UserColumnName="Nume" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ComenziContinut" msprop:Generator_TableClassName="ComenziContinutDataTable" msprop:Generator_TableVarName="tableComenziContinut" msprop:Generator_TablePropName="ComenziContinut" msprop:Generator_RowDeletingName="ComenziContinutRowDeleting" msprop:Generator_RowChangingName="ComenziContinutRowChanging" msprop:Generator_RowEvHandlerName="ComenziContinutRowChangeEventHandler" msprop:Generator_RowDeletedName="ComenziContinutRowDeleted" msprop:Generator_UserTableName="ComenziContinut" msprop:Generator_RowChangedName="ComenziContinutRowChanged" msprop:Generator_RowEvArgName="ComenziContinutRowChangeEvent" msprop:Generator_RowClassName="ComenziContinutRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdComanda" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdComanda" msprop:Generator_ColumnPropNameInRow="IdComanda" msprop:Generator_ColumnPropNameInTable="IdComandaColumn" msprop:Generator_UserColumnName="IdComanda" type="xs:int" minOccurs="0" />
+              <xs:element name="NrCrt" msprop:Generator_ColumnVarNameInTable="columnNrCrt" msprop:Generator_ColumnPropNameInRow="NrCrt" msprop:Generator_ColumnPropNameInTable="NrCrtColumn" msprop:Generator_UserColumnName="NrCrt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdProdus" msprop:Generator_ColumnVarNameInTable="columnIdProdus" msprop:Generator_ColumnPropNameInRow="IdProdus" msprop:Generator_ColumnPropNameInTable="IdProdusColumn" msprop:Generator_UserColumnName="IdProdus" type="xs:int" minOccurs="0" />
+              <xs:element name="DProdus" msprop:Generator_ColumnVarNameInTable="columnDProdus" msprop:Generator_ColumnPropNameInRow="DProdus" msprop:Generator_ColumnPropNameInTable="DProdusColumn" msprop:Generator_UserColumnName="DProdus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UM" msprop:Generator_ColumnVarNameInTable="columnUM" msprop:Generator_ColumnPropNameInRow="UM" msprop:Generator_ColumnPropNameInTable="UMColumn" msprop:Generator_UserColumnName="UM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PretVanzare" msprop:Generator_ColumnVarNameInTable="columnPretVanzare" msprop:Generator_ColumnPropNameInRow="PretVanzare" msprop:Generator_ColumnPropNameInTable="PretVanzareColumn" msprop:Generator_UserColumnName="PretVanzare" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cantitate" msprop:Generator_ColumnVarNameInTable="columnCantitate" msprop:Generator_ColumnPropNameInRow="Cantitate" msprop:Generator_ColumnPropNameInTable="CantitateColumn" msprop:Generator_UserColumnName="Cantitate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Valoare" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValoare" msprop:Generator_ColumnPropNameInRow="Valoare" msprop:Generator_ColumnPropNameInTable="ValoareColumn" msprop:Generator_UserColumnName="Valoare" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

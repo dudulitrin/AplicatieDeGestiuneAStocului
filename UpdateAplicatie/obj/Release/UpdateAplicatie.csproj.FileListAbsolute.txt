@@ -1,0 +1,9 @@
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\UpdateAplicatie\bin\Release\UpdateAplicatie.exe.config
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\UpdateAplicatie\bin\Release\UpdateAplicatie.exe
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\UpdateAplicatie\bin\Release\UpdateAplicatie.pdb
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\UpdateAplicatie\obj\Release\UpdateAplicatie.Properties.Resources.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\UpdateAplicatie\obj\Release\UpdateAplicatie.csproj.GenerateResource.cache
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\UpdateAplicatie\obj\Release\UpdateAplicatie.csproj.CoreCompileInputs.cache
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\UpdateAplicatie\obj\Release\UpdateAplicatie.exe
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\UpdateAplicatie\obj\Release\UpdateAplicatie.pdb
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\UpdateAplicatie\obj\Release\UpdateAplicatie.csprojAssemblyReference.cache

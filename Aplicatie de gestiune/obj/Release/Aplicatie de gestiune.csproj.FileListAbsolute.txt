@@ -1,0 +1,20 @@
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\bin\Release\Gestiune.mdb
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\bin\Release\Aplicatie de gestiune.exe.config
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\bin\Release\Aplicatie de gestiune.exe
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\bin\Release\Aplicatie de gestiune.pdb
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie de gestiune.csprojAssemblyReference.cache
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie_de_gestiune.FComenziAct.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie_de_gestiune.Form1.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie_de_gestiune.FormDashBoard.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie_de_gestiune.FormFacturaNoua.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie_de_gestiune.FormFacturi.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie_de_gestiune.FormFurnizor.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie_de_gestiune.FormProduse.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie_de_gestiune.FormProduseFurnizate.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie_de_gestiune.FormVanzare.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie_de_gestiune.loging.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie_de_gestiune.Properties.Resources.resources
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie de gestiune.csproj.GenerateResource.cache
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie de gestiune.csproj.CoreCompileInputs.cache
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie de gestiune.exe
+C:\Users\dudu\Desktop\Licenta Litrin Daniel Mihai\Aplicatie de gestiune\Aplicatie de gestiune\obj\Release\Aplicatie de gestiune.pdb
